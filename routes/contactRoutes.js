@@ -1,10 +1,10 @@
 const express = require("express");
-const aboutController = require("../controllers/aboutController");
+const contactController = require("../controllers/contactController");
 
 const router = express.Router();
 
 router
     .route("/")
-    .get(aboutController.getWhoWeAre)
+    .get(contactController.getContact)
 
 module.exports = router;

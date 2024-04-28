@@ -1,6 +1,6 @@
 exports.getBlogPage = async (req, res) => {
     try {
-        res.render("blog-grid");
+        res.render("blog");
     } catch (error) {
         console.log(error);
     }

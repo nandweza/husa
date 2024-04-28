@@ -8,7 +8,11 @@ const dotenv = require("dotenv");
 
 const homeRoutes = require("./routes/homeRoutes");
 const aboutRoutes = require("./routes/aboutRoutes");
+const servicesRoutes = require("./routes/servicesRoutes");
+const teamRoutes = require("./routes/teamRoutes");
+const contactRoutes = require("./routes/contactRoutes");
 const blogRoutes = require("./routes/blogRoutes");
+const projectRoutes = require("./routes/projectRoutes");
 
 dotenv.config();
 
@@ -38,7 +42,10 @@ mongoose.connect(process.env.MONGO_URL)
 
 app.use("/", homeRoutes);
 app.use("/who-we-are", aboutRoutes);
-app.use("/what-we-do", aboutRoutes);
+app.use("/what-we-do", servicesRoutes);
+app.use("/team", teamRoutes);
+app.use("/contact", contactRoutes);
+app.use("/projects", projectRoutes);
 app.use("/blog", blogRoutes);
 
 module.exports = app;

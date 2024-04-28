@@ -1,0 +1,133 @@
+<%- include("./partials/head.ejs") %>
+
+<body>
+
+<%- include("./partials/navbar.ejs") %>
+
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+
+<!-- =======================
+Main hero START -->
+<section class="pt-xl-8">
+	<div class="container">
+		<div class="row g-4 g-xxl-5">
+			<div class="col-xl-9 mx-auto">
+				<!-- Image -->
+				<img src="images/bg/02.jpg" class="rounded" alt="contact-bg">
+
+				<!-- Contact form START -->
+				<div class="row mt-n5 mt-sm-n7 mt-md-n8">
+					<div class="col-11 col-lg-9 mx-auto">
+						<div class="card shadow p-4 p-sm-5 p-md-6">
+							<!-- Card header -->
+							<div class="card-header border-bottom px-0 pt-0 pb-5">
+								<!-- Breadcrumb -->
+								<nav class="mb-3" aria-label="breadcrumb">
+									<ol class="breadcrumb breadcrumb-dots pt-0">
+										<li class="breadcrumb-item"><a href="#">Home</a></li>
+										<li class="breadcrumb-item active" aria-current="page">Contact us</li>
+									</ol>
+								</nav>
+								<!-- Title -->
+								<h1 class="mb-3 h3">Lorem ipsum, dolor sit amet consectetur.</h1>
+								<p class="mb-0">You can reach us anytime via <a href="#">humanitarianservicesaction@gmail.com</a></p>
+							</div>
+							<!-- Card body & form -->
+							<form class="card-body px-0 pb-0 pt-5">
+								<!-- Name -->
+								<div class="input-floating-label form-floating mb-4">
+									<input type="text" class="form-control bg-transparent" id="floatingName" placeholder="Password">
+									<label for="floatingName">Your name</label>
+								</div>
+								<!-- Email -->
+								<div class="input-floating-label form-floating mb-4">
+									<input type="email" class="form-control bg-transparent" id="floatingInput" placeholder="name@example.com">
+									<label for="floatingInput">Email address</label>
+								</div>
+								<!-- Number -->
+								<div class="input-floating-label form-floating mb-4">
+									<input type="text" class="form-control bg-transparent" id="floatingNumber" placeholder="Password">
+									<label for="floatingNumber">Phone number</label>
+								</div>
+								<!-- Message -->
+								<div class="input-floating-label form-floating mb-4">
+									<textarea class="form-control bg-transparent" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+									<label for="floatingTextarea2">Message</label>
+								</div>
+								<!-- Button -->
+								<button class="btn btn-lg btn-primary mb-0">Send a message</button>
+							</form>
+						</div>
+					</div>
+				</div>
+				<!-- Contact form END -->
+			</div>
+		</div> <!-- Row END -->
+	</div>
+</section>
+<!-- =======================
+Main hero END -->
+
+<!-- =======================
+Contact info & Map START -->
+<Section class="py-0">
+	<div class="container">
+		<div class="row row-cols-1 row-cols-lg-3 g-4">
+			<!-- Address info -->
+			<div class="col">
+				<div class="card card-body bg-light border p-sm-5">
+					<!-- Icon -->
+					<div class="mb-4"><i class="bi bi-geo-alt fa-xl text-primary"></i></div>
+					<!-- Title -->
+					<h6 class="mb-4">Office Address</h6>
+					<!-- Office item -->
+					<div class="d-flex align-items-center mb-2">
+						<!-- Avatar -->
+						<span class="heading-color fw-semibold mb-0">Uganda:</span>
+					</div>
+					<address class="mb-0">Kasonga Block 30, Kyangwali Refugee Settlement, Kikuube District.</address>
+				</div>
+			</div>
+
+			<!-- Email info -->
+			<div class="col">
+				<div class="card card-body bg-light border p-sm-5">
+					<!-- Icon -->
+					<div class="mb-4"><i class="bi bi-envelope fa-xl text-primary"></i></div>
+					<!-- Title -->
+					<h6 class="mb-3">Email us</h6>
+					<p>We're on top of things and aim to respond to all inquiries within 24 hours.</p>
+					<a href="#" class="heading-color text-primary-hover text-decoration-underline mb-0">humanitarianservicesaction@gmail.com</a>
+				</div>
+			</div>
+
+			<!-- Contact info -->
+			<div class="col">
+				<div class="card card-body bg-light border p-sm-5">
+					<!-- Icon -->
+					<div class="mb-4"><i class="bi bi-telephone fa-xl text-primary"></i></div>
+					<!-- Title -->
+					<h6 class="mb-3">Call us</h6>
+					<p>Let's work together towards a common goal - get in touch!</p>
+					<a href="#" class="heading-color text-primary-hover text-decoration-underline mb-0">+256 (0) 789372627</a>
+				</div>
+			</div>
+
+		</div> <!-- Row END -->
+	</div>
+
+	<!-- Map -->
+	<iframe class="w-100 h-200px h-lg-400px grayscale d-block mt-8" src="https://maps.google.com/maps?q=Kyangwali%20Refugee%20settlement&t=&z=13&ie=UTF8&iwloc=&output=embed" style="margin-bottom: -5px;" aria-hidden="false" tabindex="0"></iframe>	
+
+</Section>
+<!-- =======================
+Contact info & Map END -->
+
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+
+<%- include("./partials/footer.ejs") %>
+
+</body>
+</html>
