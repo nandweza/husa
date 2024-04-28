@@ -1,0 +1,502 @@
+<%- include("./partials/head.ejs") %>
+
+<body>
+
+<%- include("./partials/navbar.ejs") %>
+
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+
+<!-- =======================
+Main Banner START -->
+<section class="pt-0">
+	<!-- Slider START -->
+	<div class="swiper overflow-hidden" data-swiper-options='{
+		"effect": "fade",
+		"speed":"1000",
+		"autoplay":{
+			"delay": 3000, 
+			"disableOnInteraction": false
+		},
+		"pagination":{
+			"el":".swiper-pagination",
+			"clickable":"true"
+		}}'>
+
+		<div class="swiper-wrapper">
+			<!-- Slider item -->
+			<div class="swiper-slide">
+				<div class="card overflow-hidden min-vh-100 rounded-0" style="background:url(images/bg/10.jpg) no-repeat; background-size:cover; background-position:center;">
+					<!-- Bg overlay -->
+					<div class="bg-overlay bg-linear-overlay"></div>
+		
+					<!-- Card image overlay -->
+					<div class="position-relative z-index-2 d-flex flex-column m-auto h-100 py-9"> 
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-11 col-lg-8 col-xl-7 text-center m-auto">
+									<!-- Title -->
+									<h1 class="text-white display-4 my-4">Humanitarian Services Action</h1>
+									<p class="text-white mb-5">"Addressing Social Problems, Promoting Social Inclusion"</p>
+									<a class="btn btn-lg btn-white icon-link icon-link-hover mb-0" href="#">Support Us<i class="bi bi-arrow-right"></i> </a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- Slider item -->
+			<div class="swiper-slide">
+				<div class="card overflow-hidden min-vh-100 rounded-0" style="background:url(images/bg/09.jpg) no-repeat; background-size:cover; background-position:center;">
+					<!-- Bg overlay -->
+					<div class="bg-overlay bg-linear-overlay"></div>
+		
+					<!-- Content -->
+					<div class="position-relative z-index-2 d-flex flex-column m-auto h-100 py-9"> 
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-11 col-lg-8 mt-auto">
+									<!-- Title -->
+									<h1 class="text-white display-4 mb-4">Empower <span class="fw-light">Our</span> <span class="fw-light">Services</span></h1>
+									<p class="text-white mb-5">
+										Join us in supporting the SKILLING OF REFUGEES & HOST COMMUNITY MEMBERS, providing skills training and employment 
+										opportunities to create a more inclusive and prosperous future for all. Let's make a real difference in the lives 
+										of refugees and host community members alike.
+									</p>
+									<a class="btn btn-lg btn-primary icon-link icon-link-hover mb-0" href="#">Explore Our Services<i class="bi bi-arrow-right"></i> </a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>	
+
+		<!-- Slider Pagination -->
+		<div class="swiper-pagination swiper-pagination-line position-absolute bottom-0 mb-3"></div>
+	</div>	
+	<!-- Slider END -->
+</section>
+<!-- =======================
+Main Banner END -->
+
+<!-- =======================
+About START -->
+<section class="pt-0">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-11 mx-auto">
+				<div class="row g-4 g-lg-5 align-items-center">
+					<!-- Years content -->
+					<div class="col-md-6 col-lg-4 text-center">
+						<div class="icon-xxl bg-primary rounded-circle mx-auto mb-n7" style="width: 150px; height:150px;"></div>
+						<span class="heading-color fw-bold" style="font-size: 6rem; line-height: 1.25;">4</span>
+						<h6 class="w-50 mx-auto">Years of working experience</h6>
+					</div>
+					
+					<!-- Title content -->
+					<div class="col-md-6 col-lg-4">
+						<h6 class="text-body fw-normal">Since 2020</h6>
+						<h3>Refugee Led Non – Profit Community-Based Organisation</h3>
+					</div>
+					
+					<!-- Info content -->
+					<div class="col-lg-4">
+						<p class="mb-4">Humanitarian Services Action (HuSA) is a non-profit Community-based organization (CBO) formed and led by Refugees and Host Community members of Kyangwali refugee Settlement.</p>
+						<a href="#" class="btn btn-dark mb-0">Know more about us</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- =======================
+About END -->
+
+<!-- =======================
+Services START -->
+<section class="bg-light overflow-hidden">
+	<div class="container">
+		<!-- Title and content -->
+		<div class="row mb-4 mb-md-6">
+			<div class="col-md-6 col-lg-5">
+				<h2 class="mb-0">Our Strategic Objectives</h2>
+			</div>
+
+			<div class="col-md-6 col-lg-4 ms-auto">
+				<p>
+					HuSA's focus is on Mental Health and Psychosocial Support Services (MHPSS), addressing the
+					prevalent psychological stress experienced by OVER 137,000 individuals affected by
+					humanitarian emergencies in Kyangwali Refugee Settlement and the Host community. The
+					organization will alleviate emotional suffering, rebuild community structures, and mitigate the risk
+					of developing mental health conditions during and after emergencies.
+				</p>
+
+				<!-- Slider arrow -->
+				<div class="d-flex gap-3 position-relative mt-3">
+					<a href="#" class="btn btn-white border btn-icon rounded-circle mb-0 swiper-button-prev-team"><i class="bi bi-arrow-left"></i></a>
+					<a href="#" class="btn btn-white border btn-icon rounded-circle mb-0 swiper-button-next-team"><i class="bi bi-arrow-right"></i></a>
+				</div>
+			</div>
+		</div>
+
+		<!-- Service start -->
+		<div class="swiper swiper-outside-end-n20" data-swiper-options='{
+			"spaceBetween": 50,
+			"loop": false,
+			"navigation":{
+				"nextEl":".swiper-button-next-team",
+				"prevEl":".swiper-button-prev-team"
+			},
+			"breakpoints": { 
+				"576": {"slidesPerView": 1},
+				"768": {"slidesPerView": 3},
+				"992": {"slidesPerView": 3},
+				"1200": {"slidesPerView": 4}
+			}}'>
+			
+			<div class="swiper-wrapper">
+
+				<!-- Service item -->
+				<div class="swiper-slide">
+					<div class="card card-img-scale bg-body overflow-hidden">
+						<!-- Image -->
+						<div class="card-img-scale-wrapper">
+							<img src="images/services/4by3/01.jpg" class="card-img-top img-scale" alt="service image">
+						</div>
+						<!-- Card body -->
+						<div class="card-body p-4">
+							<h6><a href="service-single.html">Objective 1</a></h6>
+							<p class="mb-0">
+								Registration of HuSA as a CBO Operational in Kikuube District and strengthening sustainable operational capacities.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Service item -->
+				<div class="swiper-slide">
+					<div class="card card-img-scale bg-body overflow-hidden">
+						<!-- Image -->
+						<div class="card-img-scale-wrapper">
+							<img src="images/services/4by3/02.jpg" class="card-img-top img-scale" alt="service image">
+						</div>
+						<!-- Card body -->
+						<div class="card-body p-4">
+							<h6><a href="service-single.html">Objective 2</a></h6>
+							<p class="mb-0">
+								Develop and implement Structured Educational Programs within refugee communities for target groups
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Service item -->
+				<div class="swiper-slide">
+					<div class="card card-img-scale bg-body overflow-hidden">
+						<!-- Image -->
+						<div class="card-img-scale-wrapper">
+							<img src="images/services/4by3/03.jpg" class="card-img-top img-scale" alt="service image">
+						</div>
+						<!-- Card body -->
+						<div class="card-body p-4">
+							<h6><a href="service-single.html">Objective 3</a></h6>
+							<p class="mb-0">
+								Implement GBV prevention and response strategies as integral components, reducing reported incidents and increasing access to multi-sectoral support services.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Service item -->
+				<div class="swiper-slide">
+					<div class="card card-img-scale bg-body overflow-hidden">
+						<!-- Image -->
+						<div class="card-img-scale-wrapper">
+							<img src="images/services/4by3/04.jpg" class="card-img-top img-scale" alt="service image">
+						</div>
+						<!-- Card body -->
+						<div class="card-body p-4">
+							<h6><a href="service-single.html">Objective 4</a></h6>
+							<p class="mb-0">
+								Implement environmental protection measures to create safe living environments, by collaborating with local authorities and stakeholders
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Service item -->
+				<div class="swiper-slide">
+					<div class="card card-img-scale bg-body overflow-hidden">
+						<!-- Image -->
+						<div class="card-img-scale-wrapper">
+							<img src="images/services/4by3/05.jpg" class="card-img-top img-scale" alt="service image">
+						</div>
+						<!-- Card body -->
+						<div class="card-body p-4">
+							<h6><a href="service-single.html">Objectives 5</a></h6>
+							<p class="mb-0">
+								Strengthen child protection measures within refugee communities and ensuring coordination with relevant agencies and partners to provide comprehensive support.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Service item -->
+				<div class="swiper-slide">
+					<div class="card card-img-scale bg-body overflow-hidden">
+						<!-- Image -->
+						<div class="card-img-scale-wrapper">
+							<img src="images/services/4by3/06.jpg" class="card-img-top img-scale" alt="service image">
+						</div>
+						<!-- Card body -->
+						<div class="card-body p-4">
+							<h6><a href="service-single.html">Objective 6</a></h6>
+							<p class="mb-0">
+								Enhance community resilience and social cohesion through targeted community-based efforts, achieving measurable improvements in community well-being.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Service item -->
+				<div class="swiper-slide">
+					<div class="card card-img-scale bg-body overflow-hidden">
+						<!-- Image -->
+						<div class="card-img-scale-wrapper">
+							<img src="images/services/4by3/06.jpg" class="card-img-top img-scale" alt="service image">
+						</div>
+						<!-- Card body -->
+						<div class="card-body p-4">
+							<h6><a href="service-single.html">Objective 7</a></h6>
+							<p class="mb-0">
+								Implement sustainable food security interventions and agricultural innovations to increase in food security and mental well-being.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Service END -->
+
+	</div>
+</section>
+<!-- =======================
+Services END -->
+
+<!-- =======================
+Work START -->
+<section>
+	<div class="container">
+		<!-- Title -->
+		<div class="inner-container-small text-center mb-4 mb-md-6">
+			<h2>Our <span class="text-primary">Slogan</span></h2>
+			<P>"A known problem is not a problem."</P>
+		</div>
+
+		<div class="row step-process">
+			<!-- Step item -->
+
+			<!-- Step item -->
+			<div class="col-sm-6 col-lg-4">
+				<div class="card card-body bg-transparent text-center">
+					<!-- Icon -->
+					<div class="icon-lg bg-dark text-white rounded-circle mb-3 mx-auto">
+						<i class="bi bi-eye fa-lg"></i>
+					</div>
+					<h5>Our Vision</h5>
+					<p>To create strong and prosperous communities through inclusive humanitarian services.</p>
+				</div>
+			</div>
+
+			<!-- Step item -->
+			<div class="col-sm-6 col-lg-4">
+				<div class="card card-body bg-transparent text-center">
+					<!-- Icon -->
+					<div class="icon-lg bg-dark text-white rounded-circle mb-3 mx-auto">
+						<i class="bi bi-bullseye fa-lg"></i>
+					</div>
+					<h5>Our Mission</h5>
+					<p>To inspire humanity, demonstrate care, and promote social inclusion while addressing pressing social problems.</p>
+				</div>
+			</div>
+
+			<!-- Step item -->
+			<div class="col-sm-6 col-lg-4">
+				<div class="card card-body bg-transparent text-center">
+					<!-- Icon -->
+					<div class="icon-lg bg-dark text-white rounded-circle mb-3 mx-auto">
+						<i class="bi bi-key fa-lg"></i>
+					</div>
+					<h5>Our Core Values</h5>
+					<p>Empathy, Compassion, Care, Social welfare, Prosperity, and Peace.</p>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</section>
+<!-- =======================
+Work END -->
+
+<!-- =======================
+Video START -->
+<section class="bg-parallax position-relative h-400px h-xl-750px" data-jarallax-video="https://www.youtube.com/watch?v=O41Nm6l0sbY">
+	<div class="bg-overlay bg-dark opacity-3"></div>
+</section> 
+<!-- =======================
+Video END -->
+
+<!-- =======================
+CTA START -->
+<section class="position-relative z-index-2 pt-0">
+	<div class="container position-relative">
+		<div class="bg-dark rounded position-relative overflow-hidden p-4 p-sm-6"style="background:url(images/bg/15.jpg) no-repeat; background-size:cover; background-position:center;">
+			<div class="row align-items-center position-relative">
+				<!-- Title and content -->
+				<div class="col-md-6 col-xl-7 mb-4 mb-xl-0">
+					<h2 class="text-white">Subscribe to our newsletter</h2>
+					<p class="text-white mb-0">We've always worked very hard to give our customers the best experience.</p>
+				</div>
+	
+				<!-- Input -->
+				<form class="col-md-6 col-xl-4 ms-xl-auto">
+					<input class="form-control mb-3" type="email" placeholder="Enter your email address">
+					<a href="#" class="btn btn-primary mb-0 d-grid">Subscribe now!</a>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- =======================
+CTA END -->
+
+<!-- =======================
+Blog START -->
+<section class="pt-0">
+	<div class="container">
+
+		<!-- Title -->
+		<div class="inner-container-small text-center mb-4 mb-sm-5">
+			<h2 class="mb-0">Explore our latest blogs</h2>
+		</div>
+
+		<!-- Slider START -->
+		<div class="swiper" data-swiper-options='{
+			"loop": false,
+			"spaceBetween": 30,
+			"pagination":{
+				"el":".swiper-pagination"
+			},
+			"breakpoints": {
+				"576": {"slidesPerView": 1}, 
+				"768": {"slidesPerView": 2}, 
+				"992": {"slidesPerView": 3}
+			}}'>
+
+			<!-- Slider items -->
+			<div class="swiper-wrapper">
+				<!-- Blog item -->
+				<div class="swiper-slide">
+					<article class="card card-img-scale border p-2 h-100">
+						<!-- Card image and badge -->
+						<div class="card-img-scale-wrapper position-relative rounded overflow-hidden">
+							<img src="images/blog/4by3/03.jpg" class="card-img img-scale" alt="service image">
+							<!-- Badge -->
+							<div class="badge text-bg-dark position-absolute top-0 start-0 m-3">Technology</div>
+						</div>
+
+						<!-- Card body -->
+						<div class="card-body d-flex flex-column px-2">
+							<div class="small mb-3"><i class="bi bi-calendar me-1"></i>April 15, 2024</div>
+							<h6 class="card-title mb-3"><a href="blog-single-v2.html" class="stretched-link">Sleek and Responsive - Designing with Bootstrap and Mizzle</a></h6>
+							<!-- Author info and button -->
+							<div class="d-flex justify-content-between align-items-center mt-auto">
+								<!-- Author -->
+								<div class="d-flex align-items-center">
+									<div class="avatar avatar-xs flex-shrink-0 me-2">
+										<img class="avatar-img rounded" src="images/avatar/02.jpg" alt="avatar">
+									</div>
+									<p class="mb-0">By Emma Watson</p>
+								</div>
+								<!-- Button -->
+								<a href="#" class="btn btn-round btn-dark flex-shrink-0"><i class="bi bi-arrow-up-right"></i></a>
+							</div>
+						</div>
+					</article>
+				</div>
+
+				<!-- Blog item -->
+				<div class="swiper-slide">
+					<article class="card card-img-scale border p-2 h-100">
+						<!-- Card image and badge -->
+						<div class="card-img-scale-wrapper position-relative rounded overflow-hidden">
+							<img src="images/blog/4by3/08.jpg" class="card-img img-scale" alt="service image">
+							<!-- Badge -->
+							<div class="badge text-bg-dark position-absolute top-0 start-0 m-3">Research</div>
+						</div>
+
+						<!-- Card body -->
+						<div class="card-body d-flex flex-column px-2">
+							<div class="small mb-3"><i class="bi bi-calendar me-1"></i>April 12, 2024</div>
+							<h6 class="card-title mb-3"><a href="blog-single-v2.html" class="stretched-link">Mastering HTML Website Templates - Unleash Your Creativity with Bootstrap</a></h6>
+							<!-- Author info and button -->
+							<div class="d-flex justify-content-between align-items-center mt-auto">
+								<!-- Author -->
+								<div class="d-flex align-items-center">
+									<div class="avatar avatar-xs flex-shrink-0 me-2">
+										<img class="avatar-img rounded" src="images/avatar/04.jpg" alt="avatar">
+									</div>
+									<p class="mb-0">By Louis Ferguson</p>
+								</div>
+								<!-- Button -->
+								<a href="#" class="btn btn-round btn-dark flex-shrink-0"><i class="bi bi-arrow-up-right"></i></a>
+							</div>
+						</div>
+					</article>
+				</div>
+
+				<!-- Blog item -->
+				<div class="swiper-slide">
+					<article class="card card-img-scale border p-2 h-100">
+						<!-- Card image and badge -->
+						<div class="card-img-scale-wrapper position-relative rounded overflow-hidden">
+							<img src="images/blog/4by3/07.jpg" class="card-img img-scale" alt="service image">
+							<!-- Badge -->
+							<div class="badge text-bg-dark position-absolute top-0 start-0 m-3">Design</div>
+						</div>
+
+						<!-- Card body -->
+						<div class="card-body d-flex flex-column px-2">
+							<div class="small mb-3"><i class="bi bi-calendar me-1"></i>April 08, 2024</div>
+							<h6 class="card-title mb-3"><a href="blog-single-v2.html" class="stretched-link">Effortless Web Design with Mizzle - Unlock Your Creative Potential</a></h6>
+							<!-- Author info and button -->
+							<div class="d-flex justify-content-between align-items-center mt-auto">
+								<!-- Author -->
+								<div class="d-flex align-items-center">
+									<div class="avatar avatar-xs flex-shrink-0 me-2">
+										<img class="avatar-img rounded" src="images/avatar/09.jpg" alt="avatar">
+									</div>
+									<p class="mb-0">By Allen Smith</p>
+								</div>
+								<!-- Button -->
+								<a href="#" class="btn btn-round btn-dark flex-shrink-0"><i class="bi bi-arrow-up-right"></i></a>
+							</div>
+						</div>
+					</article>
+				</div>
+			</div>
+
+			<!-- Slider Pagination -->
+			<div class="swiper-pagination swiper-pagination-primary position-relative mt-4"></div>
+		</div>
+	</div>
+</section>
+<!-- =======================
+Blog END -->
+
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+<%- include("./partials/footer.ejs") %>
+</body>
