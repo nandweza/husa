@@ -405,6 +405,18 @@ a > code {
   height: fit-content;
 }
 
+.services .card-body {
+  height: 25vh;
+}
+
+.services img {
+  height: 30vh;
+}
+
+.icons {
+  font-size: 2rem;
+}
+
 .nav-item {
   font-weight: bold;
 }
