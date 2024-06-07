@@ -2,8 +2,8 @@ const mongoose = require("mongoose");
 
 const SectorSchema = new mongoose.Schema(
     {
-        title: { type: String, unique: true, required },
-        content: { type: String, required },
+        title: { type: String, unique: true, required: true },
+        content: { type: String, required: true },
         img: { type: String },
     },
     { timestamps: true }
