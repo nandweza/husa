@@ -1,92 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-
-	<title>Mizzle - Technology and Corporate Bootstrap Theme</title>
-
-	<!-- Meta Tags -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="author" content="Webestica.com">
-	<meta name="description" content="Technology and Corporate Bootstrap Theme">
-
-	<!-- Dark mode -->
-	<script>
-		const storedTheme = localStorage.getItem('theme')
- 
-		const getPreferredTheme = () => {
-			if (storedTheme) {
-				return storedTheme
-			}
-			return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'light'
-		}
-
-		const setTheme = function (theme) {
-			if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-				document.documentElement.setAttribute('data-bs-theme', 'dark')
-			} else {
-				document.documentElement.setAttribute('data-bs-theme', theme)
-			}
-		}
-
-		setTheme(getPreferredTheme())
-
-		window.addEventListener('DOMContentLoaded', () => {
-		    var el = document.querySelector('.theme-icon-active');
-			if(el != 'undefined' && el != null) {
-				const showActiveTheme = theme => {
-				const activeThemeIcon = document.querySelector('.theme-icon-active use')
-				const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
-				const svgOfActiveBtn = btnToActive.querySelector('.mode-switch use').getAttribute('href')
-
-				document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
-					element.classList.remove('active')
-				})
-
-				btnToActive.classList.add('active')
-				activeThemeIcon.setAttribute('href', svgOfActiveBtn)
-			}
-
-			window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-				if (storedTheme !== 'light' || storedTheme !== 'dark') {
-					setTheme(getPreferredTheme())
-				}
-			})
-
-			showActiveTheme(getPreferredTheme())
-
-			document.querySelectorAll('[data-bs-theme-value]')
-				.forEach(toggle => {
-					toggle.addEventListener('click', () => {
-						const theme = toggle.getAttribute('data-bs-theme-value')
-						localStorage.setItem('theme', theme)
-						setTheme(theme)
-						showActiveTheme(theme)
-					})
-				})
-
-			}
-		})
-		
-	</script>
-
-	<!-- Favicon -->
-	<link rel="shortcut icon" href="assets/images/favicon.ico">
-
-	<!-- Google Font -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
-	<!-- Plugins CSS -->
-	<link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css">
-	<link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
-	<link rel="stylesheet" type="text/css" href="assets/vendor/swiper/swiper-bundle.min.css">
-	
-	<!-- Theme CSS -->
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
-</head>
+<%- include("./partials/head.ejs") %>
 
 <body>
 
@@ -241,16 +153,16 @@
 						</div>
 					
 						<!-- Form START -->
-						<form>
+						<form action="/auth/register" method="post" >
 							<!-- Email -->
 							<div class="input-floating-label form-floating mb-4">
-								<input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-								<label for="floatingInput">Email address</label>
+								<input type="name" class="form-control" id="floatingInput" name="username" placeholder="name@example.com">
+								<label for="floatingInput">Username</label>
 							</div>
 
 							<!-- Password -->
 							<div class="input-floating-label form-floating position-relative">
-								<input type="password" class="form-control fakepassword pe-6" id="psw-input" placeholder="Enter your password">
+								<input type="password" class="form-control fakepassword pe-6" id="psw-input" name="password" placeholder="Enter your password">
 								<label for="floatingInput">Password</label>
 								<span class="position-absolute top-50 end-0 translate-middle-y p-0 me-2">
 									<i class="fakepasswordicon fas fa-eye-slash cursor-pointer p-2"></i>
@@ -265,24 +177,10 @@
 									<i class="bi bi-info-circle ps-1" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Include at least one uppercase, one lowercase, one special character, one number and 8 characters long." data-bs-original-title="" title=""></i>
 								</div>
 							</div>
-
-							<!-- Confirm Password -->
-							<div class="input-floating-label form-floating mb-4">
-								<input type="password" class="form-control" placeholder="Confirm your password">
-								<label for="floatingInput">Confirm Password</label>
-							</div>
-
-							<!-- Check box -->
-							<div class="mb-4">
-								<div class="form-check">
-									<input type="checkbox" class="form-check-input" id="checkbox-1">
-									<label class="form-check-label" for="checkbox-1">I agree to all Terms & conditions and the privacy policy.</label>
-								</div>
-							</div>
 							<!-- Button -->
 							<div class="align-items-center mt-0">
 								<div class="d-grid">
-									<button class="btn btn-dark mb-0" type="button">Create an account</button>
+									<button class="btn btn-dark mb-0" type="submit">Create an account</button>
 								</div>
 							</div>
 						</form>

@@ -1,0 +1,71 @@
+<%- include("./partials/head.ejs") %>
+
+<body>
+
+	<%- include("./partials/navbar.ejs") %>
+
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+
+<!-- =======================
+Sector detail START -->
+<section class="pt-8 pt-xl-9">
+	<div class="container">
+		<div class="row g-4 g-lg-6">
+
+			<!-- Title -->
+			<div class="col-lg-8 mx-auto text-center">
+				<h1 class="h2 mb-0"><%= sector.title %></h1>
+
+				<div class="d-sm-flex justify-content-center justify-content-sm-between align-items-center text-start mt-5">
+					<div class="d-flex justify-content-center align-items-center mb-5 mb-sm-0">
+						<!-- Info -->
+						<div class="ms-2">
+							<h6 class="mb-0"><a href="#">HuSA</a></h6>
+							<small>Sectors</small>
+						</div>
+					</div>
+
+					<!-- Action -->
+					<div class="d-flex justify-content-center align-items-center flex-wrap">
+						<div class="dropdown">
+							<a href="#" class="text-secondary text-primary-hover" id="cardFeedAction" data-bs-toggle="dropdown" aria-expanded="false">
+								<i class="bi bi-share me-2"></i>14
+							</a>
+							<!-- Card feed action dropdown menu -->
+							<ul class="dropdown-menu min-w-auto" aria-labelledby="cardFeedAction">
+								<li><a class="dropdown-item" href="#"> <i class="bi bi-facebook fa-fw me-2"></i>Facebook</a></li>
+								<li><a class="dropdown-item" href="#"> <i class="bi bi-instagram fa-fw me-2"></i>Instagram</a></li>
+								<li><a class="dropdown-item" href="#"> <i class="bi bi-whatsapp fa-fw me-2"></i>Whatsapp</a></li>
+								<li><a class="dropdown-item" href="/sectors/<%= sector._id %>"> <i class="fa-regular fa-paste fa-fw me-2"></i>Copy link</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Image -->
+			<div class="col-lg-10 mx-auto text-center">
+				<img src="/uploads/<%= sector.img %>" class="img-fluid rounded" alt="blog-img">
+			</div>
+
+			<!-- Content -->
+			<div class="col-lg-8 mx-auto">
+				<div class="content">
+                    <%- sector.content %>
+                </div>
+			</div>
+
+		</div> <!-- Row END -->
+	</div>
+</section>
+<!-- =======================
+Sector detail END -->
+
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+
+<%- include("./partials/footer.ejs") %>
+
+</body>
+</html>

@@ -3,6 +3,7 @@ const express = require("express");
 const app = express();
 
 const bodyParser = require("body-parser");
+const cookieParser = require("cookie-parser");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 
@@ -14,6 +15,7 @@ const contactRoutes = require("./routes/contactRoutes");
 const blogRoutes = require("./routes/blogRoutes");
 const sectorRoutes = require("./routes/sectorRoutes");
 const adminRoutes = require("./routes/adminRoutes");
+const authRoutes = require("./routes/authRoutes");
 
 dotenv.config();
 
@@ -25,6 +27,8 @@ app.set("views", "views");
 app.use(express.static('public'));
 app.use(express.static('public/uploads'));
 app.use(express.static('public/css/style.css'));
+
+app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -49,5 +53,7 @@ app.use("/contact", contactRoutes);
 app.use("/sectors", sectorRoutes);
 app.use("/blog", blogRoutes);
 app.use("/admin", adminRoutes);
+app.use("/auth", authRoutes);
+// app.use("/login", authRoutes);
 
 module.exports = app;

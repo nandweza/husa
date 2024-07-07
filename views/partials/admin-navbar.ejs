@@ -1,64 +1,99 @@
-<nav class="sidebar">
-    <div class="flex-shrink-0 p-3" style="width: 200px;">
-        <a href="/api/admin" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom bg-white">
+<nav class="top-bar">
+    <div class="d-flex align-items-center">
+        <a href="/admin" class="d-flex align-items-center py-3 mb-3 link-dark text-decoration-none">
             <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
             <img class="logo" src="/images/husa-logo.png" alt="logo" width="75">
         </a>
+        <h5 class="mb-0 pl-5 text-center">Humanitarian Services Action</h5>
+    </div>
+    <div class="account-settings dropdown">
+        <button class="btn btn-toggle d-inline-flex link-light align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-settings" aria-expanded="true">
+            <img src="/images/avatar/avatar.jpg" alt="Avatar" class="mr-1">
+        </button>
+        <div class="collapse show" id="account-settings">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li><a class="dropdown-item" href="/admin/profile">Profile</a></li>
+                <li><a class="dropdown-item" href="/auth/logout">Sign out</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<nav class="sidebar">
+    <div class="flex-shrink-0 p-3" style="width: 200px;">
         <ul class="list-unstyled ps-0">
             <li class="mb-1">
-                <button class="admin-btn btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+                <button class="admin-btn btn btn-toggle d-inline-flex link-light align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
                     Home
                 </button>
                 <div class="collapse show" id="home-collapse">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <li><a href="/admin" class="link-dark d-inline-flex text-decoration-none rounded">Overview</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Donations</a></li>
+                        <li><a href="/admin" class="d-inline-flex text-decoration-none rounded">Overview</a></li>
+                        <li><a href="#" class="d-inline-flex text-decoration-none rounded">Donations</a></li>
                     </ul>
                 </div>
             </li>
             <li class="mb-1">
-                <button class="admin-btn btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-                    Our Sectors
+                <button class="admin-btn btn btn-toggle d-inline-flex link-light align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+                    Sectors
                 </button>
                 <div class="collapse" id="dashboard-collapse">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <li><a href="/sector/create" class="link-dark d-inline-flex text-decoration-none rounded">Add</a></li>
-                        <li><a href="/sector/view" class="link-dark d-inline-flex text-decoration-none rounded">View</a></li>
+                        <!-- <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded" data-toggle="modal" data-target="#sectorModal">Add</a></li> -->
+                        <li><a href="/sectors" class="d-inline-flex text-decoration-none rounded">View</a></li>
                     </ul>
                 </div>
             </li>
             <li class="mb-1">
-                <button class="admin-btn btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+                <button class="admin-btn btn btn-toggle d-inline-flex link-light align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
                     Blog
                 </button>
                 <div class="collapse" id="orders-collapse">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <li><a href="/blog/create" class="link-dark d-inline-flex text-decoration-none rounded">New Post</a></li>
-                        <li><a href="/blog/view" class="link-dark d-inline-flex text-decoration-none rounded">View Posts</a></li>
-                        <li><a href="/blog" class="link-dark d-inline-flex text-decoration-none rounded">News & Blogs</a></li>
+                        <li><a href="/blog" class="d-inline-flex text-decoration-none rounded">View Posts</a></li>
+                        <!-- <li><a href="/blog" class="d-inline-flex text-decoration-none rounded">News & Blogs</a></li> -->
                     </ul>
                 </div>
             </li>
             <li class="mb-1">
-                <button class="admin-btn btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+                <button class="admin-btn btn btn-toggle d-inline-flex link-light align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+                    Careers
+                </button>
+                <div class="collapse" id="orders-collapse">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li><a href="#" class="d-inline-flex text-decoration-none rounded">View Careers</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="mb-1">
+                <button class="admin-btn btn btn-toggle d-inline-flex link-light align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
                     Success Stories
                 </button>
                 <div class="collapse" id="orders-collapse">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Add</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">View</a></li>
+                        <li><a href="#" class="d-inline-flex text-decoration-none rounded">View Stories</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="mb-1">
+                <button class="admin-btn btn btn-toggle d-inline-flex link-light align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+                    Gallery
+                </button>
+                <div class="collapse" id="orders-collapse">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li><a href="#" class="d-inline-flex text-decoration-none rounded">View Images</a></li>
                     </ul>
                 </div>
             </li>
             <li class="border-top my-3"></li>
             <li class="mb-1">
-                <button class="admin-btn btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+                <button class="admin-btn btn btn-toggle d-inline-flex link-light align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
                     Account
                 </button>
                 <div class="collapse" id="account-collapse">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <li><a href="/admin/profile" class="link-dark d-inline-flex text-decoration-none rounded">Profile</a></li>
-                        <li><a href="/auth/logout" class="link-dark d-inline-flex text-decoration-none rounded">Sign out</a></li>
+                        <li><a href="/admin/profile" class="d-inline-flex text-decoration-none rounded">Profile</a></li>
+                        <li><a href="/auth/logout" class="d-inline-flex text-decoration-none rounded">Sign out</a></li>
                     </ul>
                 </div>
             </li>

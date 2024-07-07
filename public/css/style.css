@@ -423,30 +423,61 @@ a > code {
 
 
 /* admin page */
+.top-bar {
+  width: 100%;
+  height: 90px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #f8f9fa;
+  color: var(--bs-red);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 1030; /* Ensures the top bar is above other elements */
+}
+
+.top-bar .account-settings {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.top-bar .account-settings img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.top-bar .account-settings a {
+  color: rgb(14, 13, 13);
+  text-decoration: none;
+}
+
 .sidebar {
-  color: var(--main-black);
-  background-color: rgb(255, 255, 255);
+  background-color: #343a40;
   width: 200px;
   flex: 1;
-  height: 100%;
+  height: 100vh;
   position: fixed;
   font-size: 1.5rem;
+  border-right: 2px solid #000;
 }
 
 .sidebar ul li a {
+  color: white;
+  background-color: var(--bs-gray);
+  width: 100%;
   font-size: 1.2rem;
   padding-left: 10px;
 }
 
-.sidebar ul li a:hover {
-  color: var(--bs-red);
-}
-
 .admin {
   margin-left: 200px;
+  margin-top: 90px;
   margin-bottom: 0;
-  height: 100%;
-  position: fixed;
+  height: auto;
+  position: relative;
 }
 
 .dashboard {
@@ -454,8 +485,9 @@ a > code {
   margin-right: 80px;
 }
 
-.topnav {
-  display: none;
+.my-dashboard {
+  /* height: 90vh; */
+  position: fixed;
 }
 
 .upper-grid {
@@ -494,7 +526,57 @@ a > code {
 .links {
   display: flex;
   align-items: center;
-  justify-content: center
+  justify-content: center;
+}
+
+/* Custom styles for the form modal */
+.custom-modal-dialog {
+  max-width: 100%;
+  width: 100%;
+}
+
+.custom-modal-dialog .modal-content {
+  height: auto;
+  overflow-y: auto; /* Allow scrolling if content overflows */
+}
+
+.custom-modal-dialog .modal-content .modal-body form .input-adjust {
+  width: 100% !important;
+  border-radius: 1px;
+  box-sizing: border-box;
+  font-size: 1.25rem;
+  height: auto;
+  padding: 0.5rem;
+}
+
+
+
+
+/* .my-form form input[type="text"] {
+  width: 100%;
+} */
+
+figure.media {
+  margin: 1em 0;
+}
+
+figure.media div[data-oembed-url] {
+  position: relative;
+  padding-bottom: 56.25%; /* Aspect ratio for 16:9 */
+  height: 0;
+  overflow: hidden;
+}
+
+figure.media div[data-oembed-url] iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.fix-blog {
+  margin-top: -400px;
 }
 
 /* end added */

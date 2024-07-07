@@ -1,0 +1,40 @@
+<%- include('./partials/head.ejs') %>
+
+<body>
+    <%- include('./partials/admin-navbar.ejs') %>
+
+    <main class="admin">
+        <h3 class="my-3 pt-5 mx-3">Update Blog</h3>
+        <div class="dashboard">
+            <div class="my-form" style="width: 80%;">
+                <!-- Form content here -->
+                <form class="p-5" action="/blog/update/<%= post._id %>" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <input type="text" name="title" value="<%= post.title %>" class="form-control py-4 px-2" id="title">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="category" value="<%= post.category %>" class="form-control py-4 px-2" id="category">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="author" value="<%= post.author %>" class="form-control py-4 px-2" id="author">
+                    </div>
+                    <div class="form-group">
+                        <input type="file" name="img" value="/uploads/<%= post.img %>" class="form-control py-2 px-2" id="img"  multiple="multiple" accept="image/*">
+                    </div>
+                    <div class="form-group">
+                        <textarea name="content" id="content" class="form-control p-2 mx-0" cols="" rows="20"><%= post.content %></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#content'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+</body>

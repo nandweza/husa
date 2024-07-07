@@ -1,3 +1,4 @@
+require("dotenv").config();
 const nodemailer = require('nodemailer');
 
 exports.getContact = async (req, res) => {
