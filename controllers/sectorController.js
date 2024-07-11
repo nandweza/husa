@@ -70,7 +70,7 @@ exports.postSector = async (req, res) => {
         const sanitizedContent = sanitizeHTML(content);
         const newSector = new Sector({ title, content: sanitizedContent, img });
         await newSector.save();
-        res.redirect("/admin");
+        res.redirect("/sectors");
         // res.status(201).json({ message: "Success", sector });
     } catch (error) {
         console.log(error);
@@ -157,7 +157,7 @@ exports.deleteSector = async (req, res) => {
     try {
         const sectorId = req.body.deleteBtn;
   
-        // Find the course by courseId
+        // Find the sector by Id
         const sector = await Sector.findById(sectorId);
   
         if (!sector) {
@@ -170,7 +170,7 @@ exports.deleteSector = async (req, res) => {
             fs.unlinkSync(imgPath);
         }
   
-        // Remove the course from the database
+        // Remove the sector from the database
         await Sector.findByIdAndDelete(sectorId);
   
         res.redirect("/sectors");

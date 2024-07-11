@@ -18,7 +18,7 @@ Content START -->
                 <!-- Title and offcanvas button -->
                 <div class="d-flex justify-content-between align-items-center mb-5 mb-sm-6">
                     <!-- Title -->
-                    <h1 class="h3 mb-0">HuSA Sectors</h1>
+                    <h1 class="h3 mb-0">HuSA Gallery</h1>
 
                     <!-- Advanced filter responsive toggler START -->
                     <button class="btn btn-primary d-lg-none flex-shrink-0 ms-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSidebar" aria-controls="offcanvasSidebar">
@@ -53,7 +53,7 @@ Content START -->
 
                     <!-- Button -->
                     <div class="col-sm-6 col-xl-3">
-                        <a href="#" class="btn btn-primary mb-0" data-toggle="modal" data-target="#sectorModal"><i class="bi bi-plus-lg me-2"></i>Add new sector</a>
+                        <a href="#" class="btn btn-primary mb-0" data-toggle="modal" data-target="#sectorModal"><i class="bi bi-plus-lg me-2"></i>Add New Image</a>
                     </div>
                 </div>
 
@@ -64,32 +64,23 @@ Content START -->
                         <thead class="thead-dark">
                             <tr>
                                 <th scope="col" class="border-0 text-white rounded-start">Image</th>
-                                <th scope="col" class="border-0 text-white">Title</th>
-                                <th scope="col" class="border-0 text-white">Status</th>
-                                <th scope="col" class="border-0 text-white">Category</th>
+                                <th scope="col" class="border-0 text-white">Content</th>
                                 <th scope="col" class="border-0 text-white rounded-end">Action</th>
                             </tr>
                         </thead>
 
                         <!-- Table body START -->
                         <tbody>
-                            <% sectors.forEach(sector => { %>
+                            <% pics.forEach(pic => { %>
                                 <tr>
                                     <td>
-                                        <img src="/uploads/<%= sector.img %>" class="img-fluid w-80px rounded" alt="sector-img">
+                                        <img src="/uploads/<%= pic.img %>" class="img-fluid w-80px rounded" alt="sector-img">
                                     </td>
-                                    <td><%= sector.title %></td>
-                                    <td><i class="fa-solid fa-circle fa-2xs statusIcon me-2"></i>status</td>
-                                    <td>category</td>
+                                    <td><%- pic.content %></td>
                                     <td>
-                                        <a href="/sectors/<%= sector._id %>" style="display: inline;">
-                                            <button class="btn btn-sm btn-dark me-1 mb-1 mb-md-0">
-                                                <i class="bi bi-eye"></i>
-                                            </button>
-                                        </a>
                                         <button class="btn btn-sm btn-light border me-1 mb-1 mb-md-0"><i class="bi bi-power"></i></button>
-                                        <form action="/sectors/<%= sector._id %>" method="post" style="display:inline;">
-                                            <input type="hidden" name="deleteBtn" value="<%= sector._id %>">
+                                        <form action="/gallery/<%= pic._id %>" method="post" style="display:inline;">
+                                            <input type="hidden" name="deleteBtn" value="<%= pic._id %>">
                                             <button class="btn btn-sm btn-danger me-1 mb-1 mb-md-0" type="submit"><i class="bi bi-trash"></i></button>
                                         </form>
                                     </td>
@@ -113,17 +104,14 @@ Content END -->
     <div class="modal-dialog custom-modal-dialog" style="width: 100%;">
         <div class="modal-content my-form">
             <div class="modal-header">
-                <h5 class="modal-title" id="sectorModalLabel">Add New Sector</h5>
+                <h5 class="modal-title" id="sectorModalLabel">Add New Image</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
                 <!-- Form content here -->
-                <form id="modalForm" action="/sectors" method="post" enctype="multipart/form-data">
-                    <div class="form-group">
-                        <input type="text" name="title" class="form-control input-adjust" id="title" placeholder="Sector Title">
-                    </div>
+                <form id="modalForm" action="/gallery" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <input type="file" name="img" class="form-control input-adjust" id="img" placeholder="Add Media">
                     </div>
@@ -141,14 +129,8 @@ Content END -->
     ClassicEditor
         .create(document.querySelector('#content'), {
             toolbar: [
-                'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote', '|',
-                'insertTable', 'undo', 'redo'
+                'heading', '|', 'bold', 'italic', 'link', 'undo', 'redo'
             ],
-            table: {
-                contentToolbar: [
-                    'tableColumn', 'tableRow', 'mergeTableCells'
-                ]
-            },
             mediaEmbed: {
                 previewsInData: true
             }

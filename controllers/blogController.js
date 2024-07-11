@@ -28,7 +28,7 @@ exports.getBlogById = async (req, res) => {
 
         const posts = await Post.find().sort({ createdAt: -1 }).limit(5);
 
-        // res.status(200).json({ sector });
+        // res.status(200).json({ post });
         if (req.user.isAuthenticated) {
             res.render("account-blog-single", { post });
         } else {
@@ -81,7 +81,7 @@ exports.updatePost = async (req, res) => {
         const { title, content, category, author } = req.body;
         const newImg = req.file ? req.file.filename : undefined;
 
-        // Fetch the current sector data to get the existing image file name
+        // Fetch the current post data to get the existing image file name
         const post = await Post.findById(postId);
         if (!post) {
             return res.status(404).json({ message: "Sector not found" });
@@ -101,7 +101,7 @@ exports.updatePost = async (req, res) => {
             });
         }
 
-        // Update the sector data
+        // Update the post data
         post.title = title;
         post.content = content;
         post.category = category;
@@ -123,7 +123,7 @@ exports.deletePost = async (req, res) => {
     try {
         const postId = req.body.deleteBtn;
   
-        // Find the course by courseId
+        // Find the post by Id
         const post = await Post.findById(postId);
   
         if (!post) {
@@ -136,7 +136,7 @@ exports.deletePost = async (req, res) => {
             fs.unlinkSync(imgPath);
         }
   
-        // Remove the course from the database
+        // Remove the post from the database
         await Post.findByIdAndDelete(postId);
   
         res.redirect("/blog");

@@ -1,0 +1,110 @@
+<%- include("./partials/head.ejs") %>
+
+<body>
+
+	<%- include("./partials/navbar.ejs") %>
+
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+
+<!-- =======================
+Main hero START -->
+<section class="pt-8">
+	<div class="container">
+		<!-- Breadcrumb & title -->
+		<div class="bg-dark rounded-4 text-center position-relative overflow-hidden py-5">
+
+			<!-- Svg decoration -->
+			<figure class="position-absolute top-0 start-0 ms-n8">
+				<svg width="424" height="405" viewBox="0 0 424 405" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<ellipse cx="212" cy="202.5" rx="212" ry="202.5" fill="url(#paint0_linear_153_3831)"/>
+					<defs>
+					<linearGradient id="paint0_linear_153_3831" x1="212" y1="0" x2="212" y2="405" gradientUnits="userSpaceOnUse">
+					<stop offset="0.0569271" stop-color="#D9D9D9" stop-opacity="0"/>
+					<stop offset="0.998202" stop-color="#D9D9D9" stop-opacity="0.5"/>
+					</linearGradient>
+					</defs>
+				</svg>
+			</figure>
+
+			<!-- SVG decoration -->
+			<figure class="position-absolute top-0 end-0 me-n8 mt-5">
+				<svg class="opacity-3" width="371" height="354" viewBox="0 0 371 354" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<ellipse cx="172.5" cy="176.5" rx="131.5" ry="125.5" fill="url(#paint0_linear_195_2)"/>
+					<ellipse cx="185.5" cy="177" rx="185.5" ry="177" fill="url(#paint1_linear_195_2)"/>
+					<defs>
+					<linearGradient id="paint0_linear_195_2" x1="172.5" y1="51" x2="172.5" y2="302" gradientUnits="userSpaceOnUse">
+					<stop offset="0.0569271" stop-color="#D9D9D9" stop-opacity="0.5"/>
+					<stop offset="0.998202" stop-color="#D9D9D9" stop-opacity="0"/>
+					</linearGradient>
+					<linearGradient id="paint1_linear_195_2" x1="185.5" y1="0" x2="185.5" y2="354" gradientUnits="userSpaceOnUse">
+					<stop offset="0.0569271" stop-color="#D9D9D9" stop-opacity="0.2"/>
+					<stop offset="0.998202" stop-color="#D9D9D9" stop-opacity="0"/>
+					</linearGradient>
+					</defs>
+				</svg>
+			</figure>
+
+			<!-- Breadcrumb -->
+			<div class="d-flex justify-content-center position-relative z-index-9">
+				<nav aria-label="breadcrumb">
+					<ol class="breadcrumb breadcrumb-dots breadcrumb-dark mb-1">
+						<li class="breadcrumb-item"><a href="/">Home</a></li>
+						<li class="breadcrumb-item active" aria-current="page">HuSA Gallery</li>
+					</ol>
+				</nav>
+			</div>
+			<!-- Title -->
+			<h1 class="h2 text-white">HuSA Gallery</h1>
+		</div>
+
+		<!-- Portfolio item START -->
+		<div class="row g-4 filter-container mt-3" data-isotope='{"layoutMode": "masonry"}'>
+			<!-- Item -->
+			<% pics.forEach(pic => { %>
+			<div class="col-sm-6 col-lg-4 grid-item marketing business brand">
+				<div class="card card-element-hover card-metro-hover">
+					<!-- Card Image -->              
+					<img src="/uploads/<%= pic.img %>" alt="gallery image">
+
+					<!-- Card elements -->
+					<div class="card-img-overlay hover-element d-flex"> 
+						<!-- Info -->
+						<div class="card-text mt-auto">
+							<h6 class="mb-0 text-white"><%- pic.content %></h6>
+						</div>
+					</div>						
+				</div>
+			</div>
+			<% }) %>
+		</div>
+
+	</div>	
+</section>
+<!-- =======================
+Main hero END -->
+
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+
+<!-- =======================
+Footer START -->
+<%- include("./partials/footer.ejs") %>
+<!-- =======================
+Footer END -->
+
+<!-- Back to top -->
+<div class="back-top"></div>
+
+<!-- Bootstrap JS -->
+<script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+<!--Vendors-->
+<script src="assets/vendor/isotope/isotope.pkgd.min.js"></script>
+<script src="assets/vendor/imagesLoaded/imagesloaded.pkgd.min.js"></script>
+
+<!-- Theme Functions -->
+<script src="assets/js/functions.js"></script>
+
+</body>
+</html>

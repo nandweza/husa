@@ -16,6 +16,7 @@ const blogRoutes = require("./routes/blogRoutes");
 const sectorRoutes = require("./routes/sectorRoutes");
 const adminRoutes = require("./routes/adminRoutes");
 const authRoutes = require("./routes/authRoutes");
+const galleryRoutes = require("./routes/galleryRoutes");
 
 dotenv.config();
 
@@ -52,8 +53,8 @@ app.use("/team", teamRoutes);
 app.use("/contact", contactRoutes);
 app.use("/sectors", sectorRoutes);
 app.use("/blog", blogRoutes);
+app.use("/gallery", galleryRoutes);
 app.use("/admin", adminRoutes);
 app.use("/auth", authRoutes);
-// app.use("/login", authRoutes);
 
 module.exports = app;

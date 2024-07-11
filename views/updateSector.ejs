@@ -26,7 +26,20 @@
 
     <script>
         ClassicEditor
-            .create(document.querySelector('#content'))
+            .create(document.querySelector('#content'), {
+                toolbar: [
+                    'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote', '|',
+                    'insertTable', 'undo', 'redo'
+                ],
+                table: {
+                    contentToolbar: [
+                        'tableColumn', 'tableRow', 'mergeTableCells'
+                    ]
+                },
+                mediaEmbed: {
+                    previewsInData: true
+                }
+            })
             .catch(error => {
                 console.error(error);
             });
