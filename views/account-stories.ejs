@@ -1,0 +1,167 @@
+<%- include('./partials/head.ejs') %>
+
+<body>
+
+<%- include('./partials/admin-navbar.ejs') %>
+
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+
+<!-- =======================
+Content START -->
+<section class="pt-sm-7 admin">
+    <div class="container pt-3 pt-xl-5">
+        <div class="row">
+
+            <!-- Main content -->
+            <div class="col-lg-8 col-xl-9 ps-lg-4 ps-xl-6">
+                <!-- Title and offcanvas button -->
+                <div class="d-flex justify-content-between align-items-center mb-5 mb-sm-6">
+                    <!-- Title -->
+                    <h1 class="h3 mb-0">HuSA Stories</h1>
+
+                    <!-- Advanced filter responsive toggler START -->
+                    <button class="btn btn-primary d-lg-none flex-shrink-0 ms-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSidebar" aria-controls="offcanvasSidebar">
+                        <i class="fas fa-sliders-h"></i> Menu
+                    </button>
+                 <!-- Advanced filter responsive toggler END -->
+                </div>
+
+                <!-- Search and buttons -->
+                <div class="row g-3 align-items-center mb-5">
+                    <!-- Search -->
+                    <div class="col-xl-5">
+                        <form class="rounded position-relative">
+                            <input class="form-control pe-5" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn border-0 px-3 py-0 position-absolute top-50 end-0 translate-middle-y" type="submit"><i class="fas fa-search fs-6"></i></button>
+                        </form>
+                    </div>
+
+                    <!-- Select option -->
+                    <div class="col-sm-6 col-xl-3 ms-auto">
+                        <!-- Short by filter -->
+                        <form>
+                            <select class="form-select js-choice" aria-label=".form-select-sm">
+                                <option>Sort by</option>
+                                <option selected>Published</option>
+                                <option>Free</option>
+                                <option>Newest</option>
+                                <option>Oldest</option>
+                            </select>
+                        </form>
+                    </div>
+
+                    <!-- Button -->
+                    <div class="col-sm-6 col-xl-3">
+                        <a href="#" class="btn btn-primary mb-0" data-toggle="modal" data-target="#sectorModal"><i class="bi bi-plus-lg me-2"></i>Add new sector</a>
+                    </div>
+                </div>
+
+                <!-- Table -->
+                <div class="table-responsive border-0">
+                    <table class="table align-middle p-4 mb-0 table-hover">
+                        <!-- Table head -->
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col" class="border-0 text-white rounded-start">Image</th>
+                                <th scope="col" class="border-0 text-white">Title</th>
+                                <th scope="col" class="border-0 text-white rounded-end">Action</th>
+                            </tr>
+                        </thead>
+
+                        <!-- Table body START -->
+                        <tbody>
+                            <% allStories.forEach(story => { %>
+                                <tr>
+                                    <td>
+                                        <img src="/uploads/<%= story.img %>" class="img-fluid w-80px rounded" alt="sector-img">
+                                    </td>
+                                    <td><%= story.title %></td>
+                                    <td>
+                                        <a href="/success-stories/<%= story._id %>" style="display: inline;">
+                                            <button class="btn btn-sm btn-dark me-1 mb-1 mb-md-0">
+                                                <i class="bi bi-eye"></i>
+                                            </button>
+                                        </a>
+                                        <button class="btn btn-sm btn-light border me-1 mb-1 mb-md-0"><i class="bi bi-power"></i></button>
+                                        <form action="/success-stories/<%= story._id %>" method="post" style="display:inline;">
+                                            <input type="hidden" name="deleteBtn" value="<%= story._id %>">
+                                            <button class="btn btn-sm btn-danger me-1 mb-1 mb-md-0" type="submit"><i class="bi bi-trash"></i></button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            <% }) %>
+                        </tbody>
+                        <!-- Table body END -->
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- =======================
+Content END -->
+
+</main>
+
+<div class="modal fade" id="sectorModal" tabindex="-1" aria-labelledby="sectorModalLabel" aria-hidden="true">
+    <div class="modal-dialog custom-modal-dialog" style="width: 100%;">
+        <div class="modal-content my-form">
+            <div class="modal-header">
+                <h5 class="modal-title" id="sectorModalLabel">Add New Sector</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Form content here -->
+                <form id="modalForm" action="/success-stories" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <input type="text" name="title" class="form-control input-adjust" id="title" placeholder="Sector Title">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control input-adjust" id="name" placeholder="Name Here....">
+                    </div>
+                    <div class="form-group">
+                        <input type="file" name="img" class="form-control input-adjust" id="img" placeholder="Add Media">
+                    </div>
+                    <!-- <div class="form-group">
+                        <input type="file" name="video" class="form-control input-adjust" id="video" placeholder="Add Media" accept="video/*">
+                    </div> -->
+                    <div class="form-group">
+                        <textarea name="content" id="content" class="form-control input-adjust" cols="30" rows="30"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    ClassicEditor
+        .create(document.querySelector('#content'), {
+            toolbar: [
+                'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote', '|',
+                'insertTable', 'undo', 'redo'
+            ],
+            table: {
+                contentToolbar: [
+                    'tableColumn', 'tableRow', 'mergeTableCells'
+                ]
+            },
+            mediaEmbed: {
+                previewsInData: true
+            }
+        })
+        .catch(error => {
+            console.error(error);
+        });
+</script>
+
+
+<!-- **************** MAIN CONTENT END **************** -->
+
+</body>
+</html>

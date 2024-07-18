@@ -1,0 +1,157 @@
+<%- include("./partials/head.ejs") %>
+
+<body>
+
+<!-- Header START -->
+<%- include("./partials/navbar.ejs") %>
+<!-- Header END -->
+
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+
+<!-- =======================
+Main Banner START -->
+<section class="pt-8 position-relative overflow-hidden">
+	<!-- SVG Decoration -->
+	<figure class="position-absolute top-0 start-50 translate-middle">
+		<svg class="fill-light opacity-8" width="1990" height="859" viewBox="0 0 1990 859" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M1990 429.5C1990 666.706 1544.52 859 995 859C445.477 859 0 666.706 0 429.5C0 192.294 445.477 0 995 0C1544.52 0 1990 192.294 1990 429.5Z"/>
+		</svg>
+	</figure>
+
+	<div class="container pt-lg-4">
+		<div class="row g-4 g-xxl-5">
+			<div class="col-lg-7 position-relative mx-auto text-center">
+				<!-- Bread crumb -->
+				<div class="d-flex justify-content-center mb-3">
+					<nav aria-label="breadcrumb">
+						<ol class="breadcrumb breadcrumb-dots pb-0 mb-0">
+							<li class="breadcrumb-item"><a href="/">Home</a></li>
+							<li class="breadcrumb-item active" aria-current="page">Success stories</li>
+						</ol>
+					</nav>
+				</div>
+
+				<!-- Title -->
+				<h1 class="mb-3">Success Stories</h1>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae.</p>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- =======================
+Main Banner END -->
+
+<!-- =======================
+Stories START -->
+<section class="pt-6">
+	<div class="container">
+		<div class="row g-4 g-lg-7">
+
+			<!-- Review card START -->
+			<% latestStories.forEach(story => { %>
+			<div class="col-md-4">
+				<div class="card card-img-scale bg-transparent overflow-hidden">
+					<!-- Card image -->
+					<div class="card-img-scale-wrapper rounded">       
+						<img src="/uploads/<%= story.img %>" class="card-img" alt="story-image">
+					</div>
+					<!-- Card body -->
+					<div class="card-body px-0">
+						<!-- <img src="assets/images/client/02.svg" class="h-30px mb-3" alt=""> -->
+						<h6 class="card-title mb-3"><%= story.title %></h6>
+						<a class="icon-link icon-link-hover stretched-link" href="/success-stories/<%= story._id%>">Read full story<i class="bi bi-arrow-right"></i> </a>
+					</div>
+				</div>
+			</div>
+			<% }) %>
+			<!-- Review card END -->
+
+		</div>
+	</div>
+</section>
+<!-- =======================
+Stories END -->
+
+<!-- =======================
+Stories 2 START -->
+<section class="pt-0">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-10 mx-auto">
+				<!-- Slider START -->
+				<div class="swiper mb-4"
+				data-swiper-options='{
+					"loop": true, 
+					"slidesPerView": 1, 
+					"spaceBetween": 80, 
+					"autoplay":{
+						"delay": 4000, 
+						"disableOnInteraction": false
+					},
+					"pagination":{
+						"el":".swiper-pagination",
+						"clickable":"true"
+					}}'>
+
+					<!-- Slider items -->
+					<div class="swiper-wrapper">
+						<% allStories.forEach(story => { %>
+						<!-- Item -->
+						<div class="swiper-slide text-center">
+							<!-- Client img -->
+							<q class="fs-4 fw-normal heading-color"><%- story.content.substring(0, 300) %></q>
+							<!-- Avatar -->
+							<div class="d-flex justify-content-center align-items-center text-start mt-4 mb-5">
+								<!-- Avatar -->
+								<!-- <div class="avatar flex-shrink-0">
+									<img class="avatar-img rounded-circle" src="/uploads/<%= story.img %>" alt="avatar">
+								</div> -->
+								<!-- Info -->
+								<div class="ms-2 mt-2 mt-sm-0">
+									<h6 class="mb-0"><%= story.name %></h6>
+								</div>
+							</div>
+							<!-- Button link -->
+							<a href="/success-stories/<%= story._id %>" class="icon-link icon-link-hover">Read full story<i class="bi bi-arrow-right"></i> </a>
+						</div>
+						<% }) %>
+					</div>
+				</div>	
+				<!-- Slider END -->
+
+				<!-- Add pagination and navigation elements here -->
+				<div class="swiper-pagination swiper-pagination-primary position-relative"></div>
+			</div>
+		</div> <!-- Row END -->
+	</div>
+</section>
+<!-- =======================
+Stories 2 END -->
+
+<!-- =======================
+CTA END -->
+
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+
+<!-- =======================
+Footer START -->
+<%- include("./partials/footer.ejs") %>
+<!-- =======================
+Footer END -->
+
+<!-- Back to top -->
+<div class="back-top"></div>
+
+<!-- Bootstrap JS -->
+<script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+<!--Vendors-->
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+<!-- ThemeFunctions -->
+<script src="assets/js/functions.js"></script>
+
+</body>
+</html>

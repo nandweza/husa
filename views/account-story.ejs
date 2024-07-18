@@ -1,0 +1,55 @@
+<%- include('./partials/head.ejs') %>
+
+<body>
+
+<%- include('./partials/admin-navbar.ejs') %>
+
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+
+<!-- =======================
+Content START -->
+<section class="pt-sm-7 admin">
+    <div class="container pt-3 pt-xl-5">
+        <div class="row">
+
+            <!-- Main content -->
+            <div class="col-lg-8 col-xl-9 ps-lg-4 ps-xl-6">
+                <!-- Title and offcanvas button -->
+                <div class="d-flex justify-content-between align-items-center mb-5 mb-sm-6">
+                    <!-- Title -->
+                    <h1 class="h3 mb-0"><%= story.title %></h1>
+                </div>
+
+                <!-- Search and buttons -->
+                <div class="row g-3 align-items-center mb-5">
+
+                    <!-- Button -->
+                    <div class="col-sm-6 col-xl-3 text-lg-end">
+                        <a href="/success-stories/update/<%= story._id %>" class="btn btn-primary mb-0"><i class="bi bi-pencil-square me-2"></i>Update Story</a>
+                    </div>
+                </div>
+                <!-- Image -->
+			    <div class="col-lg-10 mx-auto text-center">
+				    <img src="/uploads/<%= story.img %>" class="img-fluid rounded" alt="success-story-img">
+			    </div>
+
+			    <!-- Content -->
+			    <div class="col-lg-8 mx-auto">
+				    <div class="content">
+                        <%- story.content %>
+                    </div>
+			    </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- =======================
+Content END -->
+
+</main>
+
+<!-- **************** MAIN CONTENT END **************** -->
+
+</body>
+</html>

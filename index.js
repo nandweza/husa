@@ -17,6 +17,7 @@ const sectorRoutes = require("./routes/sectorRoutes");
 const adminRoutes = require("./routes/adminRoutes");
 const authRoutes = require("./routes/authRoutes");
 const galleryRoutes = require("./routes/galleryRoutes");
+const storyRoutes = require("./routes/storyRoutes");
 
 dotenv.config();
 
@@ -54,6 +55,7 @@ app.use("/contact", contactRoutes);
 app.use("/sectors", sectorRoutes);
 app.use("/blog", blogRoutes);
 app.use("/gallery", galleryRoutes);
+app.use("/success-stories", storyRoutes);
 app.use("/admin", adminRoutes);
 app.use("/auth", authRoutes);
 
